@@ -35,6 +35,24 @@ function buff(p) {
     return bufferIdx;
 }
 
+// ------------
+// PRISM
+// ------------
+function native_com_sun_prism_es2_GLFactory_nGetGLVendor(ptr) {
+    console.log("nGetGLVendor asked");
+    return "GluonWebGL";
+}
+
+function native_com_sun_prism_es2_GLFactory_nGetGLRenderer(ptr) {
+    console.log("nGetGLRenderer asked");
+    return "GluonWebRenderer";
+}
+
+function native_com_sun_prism_es2_GLFactory_nGetGLVersion(ptr) {
+    console.log("nGetGLVersion asked");
+    return "GluonWebVersion";
+}
+
 function native_com_sun_prism_es2_GLFactory_nIsGLExtensionSupported(ptr, a) {
     console.log("NISGLEXTENSIONSUPPOERTED!!! a = " + a);
    if (a == "GL_EXT_texture_format_BGRA8888") return false;
@@ -42,6 +60,10 @@ function native_com_sun_prism_es2_GLFactory_nIsGLExtensionSupported(ptr, a) {
     console.log("assume true");
     return true;
 }
+
+// ------------
+// GLASS
+// ------------
 
 function native_com_sun_glass_ui_web_WebApplication__invokeAndWait(r) {
     console.log("INVOKEANDWAIT!" + r);

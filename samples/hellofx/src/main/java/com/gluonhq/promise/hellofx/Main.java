@@ -39,9 +39,11 @@ public class Main extends Application {
         String javaVersion = System.getProperty("java.version");
         String javafxVersion = System.getProperty("javafx.version");
 Group root = new Group();
+/*
         ImageView imageView = new ImageView(new Image(Main.class.getResourceAsStream("/opendukesmall.png")));
         imageView.setFitHeight(200);
         imageView.setPreserveRatio(true);
+*/
 Rectangle r = new Rectangle(30,50,250,250);
 r.setFill(Color.YELLOW);
  Rectangle r2 = new Rectangle(10,20,50,50);
@@ -52,6 +54,7 @@ c.setCenterX(300);
 c.setCenterY(60);
 c.setFill(Color.RED);
 
+/*
      TranslateTransition tt = new TranslateTransition(Duration.millis(10000), r2);
      tt.setByX(200f);
      tt.setCycleCount(4);
@@ -61,19 +64,20 @@ c.setFill(Color.RED);
      t2.setByY(200f);
      t2.setCycleCount(4);
      t2.setAutoReverse(true);
+*/
  
 root.getChildren().add(r);
 root.getChildren().add(r2);
 root.getChildren().add(c);
-root.getChildren().add(imageView);
+// root.getChildren().add(imageView);
 
         Scene scene = new Scene(root, 640, 480);
         scene.setFill(Color.GREEN);
 
         stage.setScene(scene);
         stage.show();
-        tt.play();
-        t2.play();
+        // tt.play();
+        // t2.play();
         System.out.println( "Hello FX, start done!" );
     }
 
@@ -146,10 +150,15 @@ e.printStackTrace();
         }
     }
 
+    public static void doNothing(Runnable r) {
+System.err.println("Got runnable: " + r);
+    }
+
     public static void main(String[] args) {
 System.out.println("Hello, JavaFX! In Main");
 String osname = System.getProperty("os.name");
 String vendor = System.getProperty("java.vendor");
+System.setProperty("java.vendor","bck2brwsr");
 String vendor2 = System.getProperty("java.vendor", "none");
 boolean vendor3 = System.getProperty("java.vendor", "none").equalsIgnoreCase("bck2brwsr");
 System.out.println("[HelloFX main] osname = " + osname+" and vendor = " + vendor+" and vendor2 = " + vendor2+" and vendor 3 = " + vendor3);
@@ -161,11 +170,13 @@ System.setProperty("javafx.verbose", "true");
 System.setProperty("glass.platform", "Web");
 System.setProperty("glass.disableThreadChecks", "true");
 System.setProperty("quantum.debug", "true");
-Runnable r =  () -> {System.out.println("IN NEW THREAD");};
-Thread t = new Thread(r);
+/*
+doNothing( () -> {System.out.println("ignored");});
+Thread t = new Thread(() -> {System.out.println("IN NEW THREAD");});
 t.start();
 System.out.println("Hello, JavaFX! Launch!");
 // subOne();
+*/
 String[] dooh = new String[1];
 dooh[0] = "dooh";
         launch(Main.class, dooh);
