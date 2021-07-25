@@ -21,11 +21,13 @@ function wgl() {
     }
     var canvas = document.getElementById("jfxcanvas");
     gl = canvas.getContext("webgl2");
+/*
     function logGLCall(functionName, args) {
        console.log("dbgl." + functionName + "(" +
           WebGLDebugUtils.glFunctionArgsToString(functionName, args) + ")");
     }
     gl = WebGLDebugUtils.makeDebugContext(gl, undefined, logGLCall);
+*/
     return gl;
 }
 
