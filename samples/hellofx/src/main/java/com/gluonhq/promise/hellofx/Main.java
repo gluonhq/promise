@@ -54,12 +54,12 @@ c.setCenterX(300);
 c.setCenterY(60);
 c.setFill(Color.RED);
 
-/*
      TranslateTransition tt = new TranslateTransition(Duration.millis(10000), r2);
      tt.setByX(200f);
      tt.setCycleCount(4);
      tt.setAutoReverse(true);
  
+/*
      TranslateTransition t2 = new TranslateTransition(Duration.millis(10000), imageView);
      t2.setByY(200f);
      t2.setCycleCount(4);
@@ -76,7 +76,7 @@ root.getChildren().add(c);
 
         stage.setScene(scene);
         stage.show();
-        // tt.play();
+        tt.play();
         // t2.play();
         System.out.println( "Hello FX, start done!" );
     }
