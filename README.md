@@ -44,6 +44,9 @@ This will build the jars and put them in `build/sdk/lib` .
 
 The `resources` directory of this repository contains a snapshot of those jars in case you don't want to build them yourself.
 
+Those jars are tagged and deployed to the Gluon Nexus repository.
+For example, the tag t0813181438 corresponds to the version 18-internal+0-2021-08-13-181438 which is used in the pom.xml
+
 ## UONGL
 
 Master repo: https://github.com/gluonhq/uongl
