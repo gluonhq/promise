@@ -1,7 +1,5 @@
 package com.gluonhq.promise.hellofx;
 
-import com.gluonhq.promise.util.*;
-
 import javafx.animation.*;
 import javafx.application.Application;
 import javafx.scene.control.Label;
@@ -134,14 +132,6 @@ e.printStackTrace();
 
     public static void doNothing(Runnable r) {
 System.err.println("Got runnable: " + r);
-    }
-
-    public static void nonomain(String[] args) {
-System.err.println("My main");
-FooStub fs = new FooStub();
-Foo foo = new Foo();
-int fb = foo.callBar(2);
-System.err.println("fb = " + fb);
     }
 
 public static void main(String[] args) {
