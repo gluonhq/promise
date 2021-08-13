@@ -15,13 +15,10 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <javafx.version>16</javafx.version>
+    <javafx.version>18-internal+0-2021-08-13-181438</javafx.version>
     <aot.version>0.51</aot.version>
-<!--
- // useful during development
     <aotpath.jfx>/home/johan/openjfx/github/jfx/build/sdk/lib/</aotpath.jfx>
     <aotpath.compat>/home/johan/bck2brwsr/github/promise/resources/compatjar/</aotpath.compat>
--->
   </properties>
 
   <repositories>
@@ -42,7 +39,7 @@
     <dependency>
       <groupId>com.gluonhq</groupId>
       <artifactId>webscheduler</artifactId>
-      <version>1.0.3</version>
+      <version>1.0.4</version>
     </dependency>
     <dependency>
       <groupId>com.gluonhq.compat</groupId>
@@ -57,12 +54,9 @@
     <dependency>
       <groupId>com.gluonhq.compat</groupId>
       <artifactId>javanio</artifactId>
-      <version>1.1</version>
+      <version>1.2</version>
     </dependency>
 <!--
-<package>jar</package>
-      <scope>system</scope>
-      <systemPath>${aotpath.compat}javadate.jar</systemPath>
     <dependency>
       <groupId>java</groupId>
       <artifactId>nio</artifactId>
@@ -70,28 +64,21 @@
       <scope>system</scope>
       <systemPath>${aotpath.compat}/javanio.jar</systemPath>
     </dependency>
-    <dependency>
-      <groupId>java.time</groupId>
-      <artifactId>functions</artifactId>
-      <version>1.0.0</version>
-      <scope>system</scope>
-      <systemPath>${aotpath.compat}/functions.jar</systemPath>
-    </dependency>
 -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-base</artifactId>
-            <version>18-internal+0-2021-08-13-144102</version>
+            <version>${javafx.version}</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-graphics</artifactId>
-            <version>18-internal+0-2021-08-13-144102</version>
+            <version>${javafx.version}</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>18-internal+0-2021-08-13-144102</version>
+            <version>${javafx.version}</version>
         </dependency>
 <!--
         <dependency>
@@ -123,6 +110,11 @@
     </dependency>
     <dependency>
       <groupId>org.apidesign.bck2brwsr</groupId>
+      <artifactId>emul.zip</artifactId>
+      <version>${aot.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apidesign.bck2brwsr</groupId>
       <artifactId>emul</artifactId>
       <version>${aot.version}</version>
       <classifier>bck2brwsr</classifier>
@@ -138,7 +130,7 @@
             <artifactId>javafx-maven-plugin</artifactId>
             <version>0.0.6</version>
             <configuration>
-                <mainClass>com.gluonhq.promise.hellofx.Main</mainClass>
+                <mainClass>com.gluonhq.promise.HelloWeb</mainClass>
             </configuration>
         </plugin>
         <plugin>
