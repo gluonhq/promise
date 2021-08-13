@@ -1,5 +1,7 @@
 package com.gluonhq.promise.hellofx;
 
+import com.gluonhq.promise.util.*;
+
 import javafx.animation.*;
 import javafx.application.Application;
 import javafx.scene.control.Label;
@@ -39,11 +41,6 @@ public class Main extends Application {
         String javaVersion = System.getProperty("java.version");
         String javafxVersion = System.getProperty("javafx.version");
 Group root = new Group();
-/*
-        ImageView imageView = new ImageView(new Image(Main.class.getResourceAsStream("/opendukesmall.png")));
-        imageView.setFitHeight(200);
-        imageView.setPreserveRatio(true);
-*/
 Rectangle r = new Rectangle(30,50,250,250);
 r.setFill(Color.YELLOW);
  Rectangle r2 = new Rectangle(10,20,50,50);
@@ -59,12 +56,6 @@ c.setFill(Color.RED);
      tt.setCycleCount(4);
      tt.setAutoReverse(true);
  
-/*
-     TranslateTransition t2 = new TranslateTransition(Duration.millis(10000), imageView);
-     t2.setByY(200f);
-     t2.setCycleCount(4);
-     t2.setAutoReverse(true);
-*/
  
 root.getChildren().add(r);
 root.getChildren().add(r2);
@@ -114,15 +105,6 @@ root.getChildren().add(c);
         Scene scene = new Scene(root, 640, 480);
 scene.setFill(Color.GREEN);
 
-/*
-
-        TranslateTransition animation = new TranslateTransition(
-                Duration.seconds(5.), r
-        );
-        animation.setCycleCount(Animation.INDEFINITE);
-        animation.setByX(200);
-        animation.setAutoReverse(true);
-*/
 
 
         stage.setScene(scene);
@@ -154,7 +136,15 @@ e.printStackTrace();
 System.err.println("Got runnable: " + r);
     }
 
-    public static void main(String[] args) {
+    public static void nonomain(String[] args) {
+System.err.println("My main");
+FooStub fs = new FooStub();
+Foo foo = new Foo();
+int fb = foo.callBar(2);
+System.err.println("fb = " + fb);
+    }
+
+public static void main(String[] args) {
 System.out.println("Hello, JavaFX! In Main");
 String osname = System.getProperty("os.name");
 String vendor = System.getProperty("java.vendor");
@@ -170,13 +160,7 @@ System.setProperty("javafx.verbose", "true");
 System.setProperty("glass.platform", "Web");
 System.setProperty("glass.disableThreadChecks", "true");
 System.setProperty("quantum.debug", "true");
-/*
-doNothing( () -> {System.out.println("ignored");});
-Thread t = new Thread(() -> {System.out.println("IN NEW THREAD");});
-t.start();
-System.out.println("Hello, JavaFX! Launch!");
-// subOne();
-*/
+com.gluonhq.webscheduler.Util.warmup();
 String[] dooh = new String[1];
 dooh[0] = "dooh";
         launch(Main.class, dooh);
