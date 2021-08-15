@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Back 2 Browser Bytecode Translator
+    Copyright (C) 2012-2018 Jaroslav Tulach <jaroslav.tulach@apidesign.org>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, version 2 of the License.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. Look for COPYING file in the top folder.
+    If not, see http://opensource.org/licenses/GPL-2.0.
+
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>HelloWorld in the browser</title>
+
+        <style type="text/css">
+        html {text-align: center;}
+        body {color: #2c3e50; background-color: white; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+        pre {color: #ffffff; background-color: #121e31; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+        table {color: #ffffff; background-color: #121e31; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+        .string {color: #e2ce00}
+        a {color: #e2ce00}
+        .ST1 {color: #0000cc; font-family: Monospaced; font-weight: bold}
+        .ST0 {color: #0000ff}
+        .comment {color: #428bdd}
+        .keyword-directive {color: #f8bb00}
+        .tag {color: #f8bb00}
+        .ST0 {color: #628fb5; background-color: #1b3450}
+        .sgml-comment {color: #808080}
+        .value {color: #99006b}
+        .argument {color: #007c00}
+        .sgml-declaration {color: #bf9221}
+        </style>    
+
+        </head>
+    <body>
+    <div style="background-color: #0A6DB0; height: 70px; text-align: left;">
+        <div style="margin-left: 100px; position: relative; top: 50%; transform: translateY(-50%);">
+            <a href="https://gluonhq.com/" title="Gluon | "><img src="https://i0.wp.com/gluonhq.com/wp-content/uploads/2015/02/Gluon_Reverse_Blue2.png?fit=2669%2C794&amp;ssl=1" alt="Gluon" style="height: 50px;"></a>
+        </div>
+    </div>
+    <h1>JavaFX in the browser!</h1>
+    <h2>Ensemble Lite</h2>
+        <script>
+            function startJsRenderer() {
+console.log("START RENDERING");
+            }
+        </script>
+        <script src="bck2brwsr.js"></script>
+        <script src="uongl.js"></script>
+        <script>
+            var vm = bck2brwsr('hellotext-1.0-SNAPSHOT.js');
+            vm.loadClass('com.gluonhq.promise.HelloText', function(mainClass) {
+                mainClass.invoke('main');
+            });
+        </script>
+        <canvas id="jfxcanvas" width="640" height="480"></canvas>
+        <h3><a href="https://gluonhq.com" target="_blank">gluonhq.com</a></h3>
+    </body>
+</html>
