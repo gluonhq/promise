@@ -19,6 +19,7 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.effect.Blend;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -35,12 +36,17 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class HelloWeb extends Application {
+
+// make this false to test on desktop (at least linux works)
+    private final static boolean ONWEB=true;
+
     private final static int UTC = 2; // fix
 
     VBox root;
 
     @Override
     public void start(Stage stage) {
+        Label l = new Label("JavaFX in the WebBrowser");
         ImageView imageView = new ImageView(new Image(HelloWeb.class.getResourceAsStream("/openduke.png")));
         imageView.setFitHeight(300);
         imageView.setPreserveRatio(true);
@@ -52,7 +58,7 @@ public class HelloWeb extends Application {
         pause.setOnFinished(event -> rotate.playFromStart());
 
 
-        root = new VBox(imageView);
+        root = new VBox(l, imageView);
         root.setAlignment(Pos.CENTER);
 
         Scene scene = new Scene(new HBox(createClock(), root), 640, 480);
@@ -182,29 +188,18 @@ public class HelloWeb extends Application {
     }
 
     public static void main(String[] args) {
-System.out.println("Hello, JavaFX! In Main");
-String osname = System.getProperty("os.name");
-String vendor = System.getProperty("java.vendor");
-System.setProperty("java.vendor","bck2brwsr");
-String vendor2 = System.getProperty("java.vendor", "none");
-boolean vendor3 = System.getProperty("java.vendor", "none").equalsIgnoreCase("bck2brwsr");
-System.out.println("[HelloFX main] osname = " + osname+" and vendor = " + vendor+" and vendor2 = " + vendor2+" and vendor 3 = " + vendor3);
-System.setProperty("prism.order", "es2");
-System.setProperty("prism.debug", "true");
-System.setProperty("prism.verbose", "true");
-System.setProperty("javafx.verbose", "true");
-System.setProperty("glass.platform", "Web");
-System.setProperty("glass.disableThreadChecks", "true");
-System.setProperty("quantum.debug", "true");
-com.gluonhq.webscheduler.Util.warmup();
-String[] dooh = new String[1];
-dooh[0] = "dooh";
-        // launch(Main.class, dooh);
-// System.out.println("Hello, JavaFX! Out Main");
-
-        // System.setProperty("prism.order", "es2");
-        // System.setProperty("glass.platform", "Web");
-        // System.setProperty("glass.disableThreadChecks", "true");
+        System.out.println("Hello, JavaFX! In Main");
+        System.setProperty("prism.order", "es2");
+        System.setProperty("prism.debug", "true");
+        System.setProperty("prism.verbose", "true");
+        System.setProperty("javafx.verbose", "true");
+        System.setProperty("glass.platform", "Web");
+        System.setProperty("glass.disableThreadChecks", "true");
+        System.setProperty("quantum.debug", "true");
+        if (ONWEB) {
+            System.setProperty("java.vendor","bck2brwsr");
+            com.gluonhq.webscheduler.Util.warmup();
+        }
         launch(HelloWeb.class, "");
     }
 

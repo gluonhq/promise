@@ -15,7 +15,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <javafx.version>18-internal+0-2021-08-13-181438</javafx.version>
+    <javafx.version>18-internal+0-2021-08-17-175730</javafx.version>
     <aot.version>0.51</aot.version>
     <aotpath.jfx>/home/johan/openjfx/github/jfx/build/sdk/lib/</aotpath.jfx>
     <aotpath.compat>/home/johan/bck2brwsr/github/promise/resources/compatjar/</aotpath.compat>
@@ -39,7 +39,7 @@
     <dependency>
       <groupId>com.gluonhq</groupId>
       <artifactId>webscheduler</artifactId>
-      <version>1.0.4</version>
+      <version>1.0.5</version>
     </dependency>
     <dependency>
       <groupId>com.gluonhq.compat</groupId>
