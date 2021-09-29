@@ -8,7 +8,7 @@ to automate all these steps and integrate them into Gluon Substrate, we
 want developers to experiment with the components and show the current state.
 
 If you are looking for examples showing how to use JavaFX inside a 
-web browser, please have a look at https://github.com/gluonhq/samples/tree/master/HelloWeg
+web browser, please have a look at https://github.com/gluonhq/gluon-samples/tree/master/HelloWeb
 
 ## Warning
 These instructions are for contributors or the brave developers who want
