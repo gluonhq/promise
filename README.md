@@ -1,17 +1,14 @@
 # promise
 
-This repository discusses the steps required to run a JavaFX application
-inside a browser.
-
-It contains a sample `hellofx` which *should* work out of the box.
-You can clone this repository, and cd into `samples/hellofx` and follow the
-`README` there.
-
-The remainder of this repository is targeting developers who want to 
-contribute to JavaFX on the Web.
+This repository discusses the internal working for running JavaFX applications
+inside a browser. The code and instructions here are targeting developers 
+who want to contribute to JavaFX on the Web.
 A number of steps are required to achieve this, and while the goal is
 to automate all these steps and integrate them into Gluon Substrate, we
 want developers to experiment with the components and show the current state.
+
+If you are looking for examples showing how to use JavaFX inside a 
+web browser, please have a look at https://github.com/gluonhq/samples/tree/master/HelloWeg
 
 ## Warning
 These instructions are for contributors or the brave developers who want
